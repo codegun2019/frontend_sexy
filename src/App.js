@@ -1,14 +1,16 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import './App.css';
-import Card from './page/Card';
-import CardList from './component/Cardlist';
+import Cards from './page/Cards';
+import Card from './component/Card';
+import Navbar from './component/Navbar';
 import InstaFeeds from './component/InstaFeeds';
 
 function App() {
   return (
     <div className="App">
       <Router>
+      <Navbar />
         <nav>
           <ul>
             <li>
@@ -19,8 +21,9 @@ function App() {
         </nav>
 
         <Routes>
-          <Route path="/CardList" element={<Card />} />
-          <Route path="/InstaFeeds" element={<InstaFeeds />} />
+          <Route path="/Navbar" element={<Navbar />} />
+          <Route path="/CardList" element={<Cards />} />
+          <Route path="/Card/:id" element={<Card />} />
           {/* Add more routes as needed */}
         </Routes>
       </Router>

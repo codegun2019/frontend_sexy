@@ -1,8 +1,12 @@
 // Card.js
-import React from 'react';
+import React,{ useState } from 'react';
 import CardList from '../component/Cardlist';
+import Pagination from '../component/Pagination';
 
 const Card = () => {
+  const itemsPerPage = 5; // จำนวนรายการที่แสดงต่อหน้า
+  const [currentPage, setCurrentPage] = useState(1);
+
 
   const cardData = [
     {
@@ -147,6 +151,19 @@ const Card = () => {
     },
   ];
 
+   // คำนวณจำนวนหน้าทั้งหมด
+   const totalPages = Math.ceil(cardData.length / itemsPerPage);
+
+   // ดึงข้อมูลที่ต้องการแสดงตามหน้าปัจจุบัน
+   const indexOfLastItem = currentPage * itemsPerPage;
+   const indexOfFirstItem = indexOfLastItem - itemsPerPage;
+   const currentItems = cardData.slice(indexOfFirstItem, indexOfLastItem);
+ 
+   // ฟังก์ชันที่เรียกเมื่อมีการเปลี่ยนหน้า
+   const onPageChange = (page) => {
+     setCurrentPage(page);
+   };
+
   return (
     <div className="App">
       <header className="App-header">
@@ -154,7 +171,8 @@ const Card = () => {
       </header>
       <main className="App-main">
         <div className="container">
-          <CardList cardData={cardData} />
+          <CardList cardData={currentItems} />
+          <Pagination currentPage={currentPage} totalPages={totalPages} onPageChange={onPageChange} />
         </div>
       </main>
     </div>
