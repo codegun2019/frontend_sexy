@@ -1,0 +1,164 @@
+// Card.js
+import React from 'react';
+import CardList from '../component/Cardlist';
+
+const Card = () => {
+
+  const cardData = [
+    {
+      id: 1,
+      name: 'ไบร์ท บุญวรา เลิศปรีชา',
+      title: 'bright_berry',
+      imageSrc: 'https://cute.thailandsuperstar.com/images/pix/206723333/T_2598587960547326928.jpg',
+      post: '2,391',
+      followes: '3,936',
+      followings: '1,126',
+      social: {
+        facebook: '#facebook',
+        twitter: '#twitter',
+        instagram: '#instagram',
+      },
+    },
+    {
+      id: 2,
+      name: 'John Doe',
+      title: 'CTO / Co-Founder',
+      imageSrc: 'https://docs.material-tailwind.com/img/team-2.jpg',
+      post: '2,391',
+      followes: '3,936',
+      followings: '1,126',
+      social: {
+        facebook: '#facebook2',
+        twitter: '#twitter2',
+        instagram: '#instagram2',
+      },
+    },
+    {
+      id: 3,
+      name: 'Jane Smith',
+      title: 'Designer',
+      imageSrc: 'https://docs.material-tailwind.com/img/team-1.jpg',
+      post: '2,391',
+      followes: '3,936',
+      followings: '1,126',
+      social: {
+        facebook: '#facebook3',
+        twitter: '#twitter3',
+        instagram: '#instagram3',
+      },
+    },
+    {
+      id: 4,
+      name: 'Robert Johnson',
+      title: 'Software Engineer',
+      imageSrc: 'https://docs.material-tailwind.com/img/team-4.jpg',
+      post: '2,391',
+      followes: '3,936',
+      followings: '1,126',
+      social: {
+        facebook: '#facebook4',
+        twitter: '#twitter4',
+        instagram: '#instagram4',
+      },
+    },
+    {
+      id: 5,
+      name: 'Natalie Paisley',
+      title: 'CEO / Co-Founder',
+      imageSrc: 'https://cute.thailandsuperstar.com/images/pix/350997913/T_2503090161510037191.jpg',
+      post: '2,391',
+      followes: '3,936',
+      followings: '1,126',
+      social: {
+        facebook: '#facebook',
+        twitter: '#twitter',
+        instagram: '#instagram',
+      },
+    },
+    {
+      id: 6,
+      name: 'John Doe',
+      title: 'CTO / Co-Founder',
+      imageSrc: 'https://cute.thailandsuperstar.com/images/pix/350997913/T_2496639444784042413.jpg',
+      post: '2,391',
+      followes: '3,936',
+      followings: '1,126',
+      social: {
+        facebook: '#facebook2',
+        twitter: '#twitter2',
+        instagram: '#instagram2',
+      },
+    },
+    {
+      id: 7,
+      name: 'Jane Smith',
+      title: 'Designer',
+      imageSrc: 'https://cute.thailandsuperstar.com/images/pix/350997913/T_2487864148983348438.jpg',
+      post: '2,391',
+      followes: '3,936',
+      followings: '1,126',
+      social: {
+        facebook: '#facebook3',
+        twitter: '#twitter3',
+        instagram: '#instagram3',
+      },
+    },
+    {
+      id: 8,
+      name: 'Robert Johnson',
+      title: 'Software Engineer',
+      imageSrc: 'https://cute.thailandsuperstar.com/images/pix/350997913/T_2468209861873390158.jpg',
+      post: '2,391',
+      followes: '3,936',
+      followings: '1,126',
+      social: {
+        facebook: '#facebook4',
+        twitter: '#twitter4',
+        instagram: '#instagram4',
+      },
+    },
+    {
+      id: 9,
+      name: 'Natalie Paisley',
+      title: 'CEO / Co-Founder',
+      imageSrc: 'https://cute.thailandsuperstar.com/images/pix/350997913/T_2471947647483045935.jpg',
+      post: '2,391',
+      followes: '3,936',
+      followings: '1,126',
+      social: {
+        facebook: '#facebook',
+        twitter: '#twitter',
+        instagram: '#instagram',
+      },
+    },
+    {
+      id: 10,
+      name: 'John Doe',
+      title: 'CTO / Co-Founder',
+      imageSrc: 'https://cute.thailandsuperstar.com/images/pix/350997913/T_2464506036234821639.jpg',
+      post: '2,391',
+      followes: '3,936',
+      followings: '1,126',
+      social: {
+        facebook: '#facebook2',
+        twitter: '#twitter2',
+        instagram: '#instagram2',
+      },
+    },
+  ];
+
+  return (
+    <div className="App">
+      <header className="App-header">
+        {/* <Navbar /> */}
+      </header>
+      <main className="App-main">
+        <div className="container">
+          <CardList cardData={cardData} />
+        </div>
+      </main>
+    </div>
+  );
+}
+
+export default Card;

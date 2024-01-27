@@ -6,14 +6,26 @@
   height: 40vmin;
   pointer-events: none;
 }
-
+.font-noto-700{
+  font-family: 'Noto Sans Thai', sans-serif;
+  font-weight: 700;
+}
+.font-noto-400{
+  font-family: 'Noto Sans Thai', sans-serif;
+  font-weight:400;
+}
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
   }
 }
 
-.App-header {
+.App-header{
+  background-color: #f1f1f1;
+  padding: 10px;
+}
+
+.App-main {
   background-color: #f1f1f1;
   min-height: 100vh;
   display: flex;
@@ -23,7 +35,20 @@
   font-size: calc(10px + 2vmin);
   color: white;
 }
+.icon-facebook {
+  color: #3b5998;
+}
 
+.icon-twitter {
+  color: #1da1f2;
+}
+
+.icon-instagram {
+  color: #c13584;
+}
+.icon-Line{
+  color: #23af00;
+}
 .App-link {
   color: #61dafb;
 }

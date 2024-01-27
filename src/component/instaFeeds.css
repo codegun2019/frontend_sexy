@@ -1,0 +1,20 @@
+/* instaFeeds.css */
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  
+  .feed {
+    width: 300px; /* ปรับขนาดของแต่ละ feed ตามที่คุณต้องการ */
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    padding: 10px;
+  }
+  
+  .feed img {
+    max-width: 100%;
+    height: auto;
+  }
+  
