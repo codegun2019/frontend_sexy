@@ -8,22 +8,15 @@ import InstaFeeds from './component/InstaFeeds';
 
 function App() {
   return (
-    <div className="App">
+    <div>
       <Router>
-      <Navbar />
-        <nav>
-          <ul>
-            <li>
-              <Link to="/CardList">Card List</Link>
-            </li>
-            {/* Add more navigation links as needed */}
-          </ul>
-        </nav>
+      <header className="App-header">
+        <Navbar />
+      </header>
 
         <Routes>
           <Route path="/Navbar" element={<Navbar />} />
           <Route path="/CardList" element={<Cards />} />
-          <Route path="/Card/:id" element={<Card />} />
           {/* Add more routes as needed */}
         </Routes>
       </Router>

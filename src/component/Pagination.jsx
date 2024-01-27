@@ -3,7 +3,6 @@ import { Button, IconButton } from "@material-tailwind/react";
 import { ArrowRightIcon, ArrowLeftIcon } from "@heroicons/react/24/outline";
 
 const Pagination = ({ currentPage, totalPages, onPageChange }) => {
-  // สร้าง array ของหน้า Pagination
   const pages = Array.from({ length: totalPages }, (_, index) => index + 1);
 
   const next = () => {
@@ -16,6 +15,14 @@ const Pagination = ({ currentPage, totalPages, onPageChange }) => {
     if (currentPage > 1) {
       onPageChange(currentPage - 1);
     }
+  };
+
+  // กำหนดให้แสดงเลขหน้าที่มีลำดับรอบๆ หนึ่งๆ
+  const getDisplayedPages = () => {
+    const currentPageIndex = currentPage - 1;
+    const startIndex = Math.max(0, currentPageIndex - 2);
+    const endIndex = Math.min(startIndex + 1, pages.length - 1);
+    return pages.slice(startIndex, endIndex + 1);
   };
 
   return (
@@ -31,8 +38,7 @@ const Pagination = ({ currentPage, totalPages, onPageChange }) => {
       </Button>
 
       <ul className="flex space-x-4">
-        {/* แสดงหน้า Pagination */}
-        {pages.map((page) => (
+        {getDisplayedPages().map((page) => (
           <li key={page}>
             <Button
               className={currentPage === page ? "scale-125" : "scale-100"}
@@ -44,6 +50,33 @@ const Pagination = ({ currentPage, totalPages, onPageChange }) => {
             </Button>
           </li>
         ))}
+
+        {currentPage < totalPages - 2 && (
+          <li>
+            <Button
+              className="scale-100"
+              color="gray"
+              size="sm"
+              onClick={() => onPageChange(currentPage + 3)}
+            >
+              ...
+            </Button>
+          </li>
+        )}
+
+        {/* แสดงปุ่มหน้าสุดท้าย */}
+        {currentPage < totalPages - 1 && (
+          <li>
+            <Button
+              className="scale-100"
+              color="gray"
+              size="sm"
+              onClick={() => onPageChange(totalPages)}
+            >
+              {totalPages}
+            </Button>
+          </li>
+        )}
       </ul>
 
       <Button

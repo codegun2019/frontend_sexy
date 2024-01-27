@@ -166,9 +166,6 @@ const Card = () => {
 
   return (
     <div className="App">
-      <header className="App-header">
-        {/* <Navbar /> */}
-      </header>
       <main className="App-main">
         <div className="container">
           <CardList cardData={currentItems} />

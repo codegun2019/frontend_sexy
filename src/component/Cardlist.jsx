@@ -13,10 +13,10 @@ import {
 
 const CardList = ({ cardData }) => {
   return (
-    <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-5">
+    <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 m-5">
       {cardData.map((data) => (
         <Card key={data.id} className="w-full lg:w-full xl:w-1/1 hover:w-100 transition-transform transform hover:-translate-y-1 hover:shadow-lg hover:scale-105">
-          <CardHeader floated={false} className="h-44 max-h-44 hover:scale-110 transition-transform transform hover:-translate-y-1 cursor-pointer">
+          <CardHeader floated={false} className="h-64 max-h-64 lg:h-[12rem] lg:max-h-[12rem] md:h-[12rem] md:max-h-[12rem] sm:h-[15rem] sm:max-h-[15rem]  hover:scale-110 transition-transform transform hover:-translate-y-1 cursor-pointer">
             <img src={data.imageSrc} alt="profile-picture " />
           </CardHeader>
           <CardBody className="text-center">
